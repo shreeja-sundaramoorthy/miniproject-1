@@ -9,6 +9,7 @@ st.set_page_config(
 )
 st.title("Information Feed")
 
+@st.cache_data
 def add_provider(name,type,address,city,contact):
     conn = sqlite3.connect('food_waste_management.db')
     c = conn.cursor()
@@ -16,6 +17,7 @@ def add_provider(name,type,address,city,contact):
     conn.commit()
     conn.close()
 
+@st.cache_data
 def add_receiver(name,type,city,contact):
     conn = sqlite3.connect('food_waste_management.db')
     c = conn.cursor()
@@ -23,6 +25,7 @@ def add_receiver(name,type,city,contact):
     conn.commit()
     conn.close()
 
+@st.cache_data
 def add_foodlisting(food_name,quantity,expiry_date,provider_id,provider_type,location,food_type,meal_type):
     conn = sqlite3.connect('food_waste_management.db')
     c = conn.cursor()
@@ -30,6 +33,7 @@ def add_foodlisting(food_name,quantity,expiry_date,provider_id,provider_type,loc
     conn.commit()
     conn.close()
 
+@st.cache_data
 def add_claim(food_id,receiver_id,status,time_stamp):
     conn = sqlite3.connect('food_waste_management.db')
     c = conn.cursor()
@@ -37,6 +41,7 @@ def add_claim(food_id,receiver_id,status,time_stamp):
     conn.commit()
     conn.close()
 
+@st.cache_data
 def update_provider(provider_id, name=None, type=None, address=None, city=None, contact=None):
     conn = sqlite3.connect('food_waste_management.db')
     cursor = conn.cursor()
@@ -55,6 +60,7 @@ def update_provider(provider_id, name=None, type=None, address=None, city=None, 
     conn.commit()
     conn.close()
 
+@st.cache_data
 def update_receiver(receiver_id, name=None, type=None, city=None, contact=None):
     conn = sqlite3.connect('food_waste_management.db')
     cursor = conn.cursor()
@@ -71,6 +77,7 @@ def update_receiver(receiver_id, name=None, type=None, city=None, contact=None):
     conn.commit()
     conn.close()
 
+@st.cache_data
 def update_foodlisting(food_id, food_name=None, quantity=None,expiry_date=None,provider_id=None,provider_type=None,location=None,food_type=None,meal_type=None):
     conn = sqlite3.connect('food_waste_management.db')
     cursor = conn.cursor()
@@ -95,6 +102,7 @@ def update_foodlisting(food_id, food_name=None, quantity=None,expiry_date=None,p
     conn.commit()
     conn.close()
 
+@st.cache_data
 def update_claim(claim_id,food_id=None,receiver_id=None,status=None,time_stamp=None):
     conn = sqlite3.connect('food_waste_management.db')
     cursor = conn.cursor()
@@ -111,6 +119,7 @@ def update_claim(claim_id,food_id=None,receiver_id=None,status=None,time_stamp=N
     conn.commit()
     conn.close()
 
+@st.cache_data
 def delete_provider(provider_id):
     conn = sqlite3.connect('food_waste_management.db')
     c = conn.cursor()
@@ -118,6 +127,7 @@ def delete_provider(provider_id):
     conn.commit()
     conn.close()
 
+@st.cache_data
 def delete_receiver(receiver_id):
     conn = sqlite3.connect('food_waste_management.db')
     c = conn.cursor()
@@ -125,6 +135,7 @@ def delete_receiver(receiver_id):
     conn.commit()
     conn.close()
 
+@st.cache_data
 def delete_foodlisting(food_id):
     conn = sqlite3.connect('food_waste_management.db')
     c = conn.cursor()
@@ -132,6 +143,7 @@ def delete_foodlisting(food_id):
     conn.commit()
     conn.close()
 
+@st.cache_data
 def delete_claim(claim_id):
     conn = sqlite3.connect('food_waste_management.db')
     c = conn.cursor()

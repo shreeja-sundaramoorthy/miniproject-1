@@ -10,6 +10,6 @@ st.set_page_config(
 st.title("Creator Information")
 
 st.subheader("Shreeja S")
-st.image("C:/Users/monoh/Desktop/guvi/41-EDIT.jpg", width=200)
+st.image("project_1creatorpic.jpg", width=200)
 st.subheader("Pursuing")
 st.markdown("Advanced Programmer with Data Science Mastery Program by **GUVI**")

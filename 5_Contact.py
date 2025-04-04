@@ -12,6 +12,7 @@ cursor = connection.cursor()
 
 st.title("Contact Information")
 
+@st.cache_data
 def contact_provider(primary_key):
     conn = sqlite3.connect('food_waste_management.db')
     c = conn.cursor()
@@ -21,6 +22,7 @@ def contact_provider(primary_key):
     conn.commit()
     conn.close()
 
+@st.cache_data
 def contact_receiver(primary_key):
     conn = sqlite3.connect('food_waste_management.db')
     c = conn.cursor()
